@@ -395,7 +395,7 @@ class ODriveNode(object):
                         self.status = "engaged"
                         
                     left_linear_val, right_linear_val = motor_command[1]
-                    self.driver.drive(left_linear_val, right_linear_val)
+                    self.driver.drive(-left_linear_val, right_linear_val)
                     self.last_speed = max(abs(left_linear_val), abs(right_linear_val))
                     self.last_cmd_vel_time = time_now
                 except (ChannelBrokenException, ChannelDamagedException):
